@@ -1,0 +1,10 @@
+{
+   "adapters":[
+      {
+         "qualifiedName": "com.sponsorpay.mediation.AdColonyMediationAdapter”,
+         "versions": [
+            "2.0.0"
+         ]
+      }
+   ]
+}
