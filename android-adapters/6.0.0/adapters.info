@@ -94,6 +94,12 @@
          ]
       },
       {
+         "qualifiedName": "com.sponsorpay.mediation.FacebookMediationAdapter",
+         "versions": [
+            "1.0.0"
+         ]
+      },
+      {
          "qualifiedName":"com.sponsorpay.mediation.TremorMediationAdapter",
          "versions":[
             "1.0.0"
