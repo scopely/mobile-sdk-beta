@@ -1,0 +1,126 @@
+{
+    "adapters": [
+        {
+          "name": "AdColony",
+          "settings": {
+               "app.id": "appbcef5600219543bc8a",
+               "client.options": "version:6.1.1,store:google,skippable",
+               "zone.ids.rewarded.video": [
+                    "vze5dfece12cd9440493"
+               ],
+                "zone.ids.interstitial": [
+                    "vz18be9496822047ba9b"
+               ]
+          }
+        },
+        {
+            "name": "AdMob",
+            "settings": {
+                "ad.unit.id": "** YOUR AD UNIT ID **",
+                "addTestDevice": [
+                    "SH24******"
+                ]
+            }
+        },
+        {
+            "name": "Applifier",
+            "settings": {
+                "game.id.key": "11776",
+                "noOfferScreen": false,
+                "comment":"Optional setting below",
+                "openAnimated": false,
+                "muteVideoSounds": false,
+                "useDeviceOrientationForVideo": false
+            }
+        },
+        {
+            "name": "FlurryAppCircleClips",
+            "settings": {
+                "api.key": "VG7KQ2N6W4P6GDP4CDT9",
+                "ad.name.space": "INTERSTITIAL_MAIN_VIEW",
+                "ad.name.type": "FULLSCREEN",
+                "interstitial.ad.name.space": "INTERSTITIAL_MAIN_VIEW__NOT_REWARDED",
+                "interstitial.ad.type": "FULLSCREEN",
+                "enable.test.ads": false
+            }
+        },
+        {
+            "name": "Vungle",
+            "settings": {
+                "app.id": "527bcca267a0597358000011",
+                "comment":"optional configurations starting below",
+                "sound.enabled": true,
+                "auto.rotation.enabled": false,
+                "back.button.enabled": false,
+                "video.considered.watched.at": "0.60",
+                "incentivized.mode": true
+            }
+        },
+        {
+            "name": "AppLift",
+            "settings": {
+                "app.id": "1911",
+                "app.secret": "8b8b27bf881bcd679cd687b64a64f812dcb764036852912edfdfd9b0bd18a375",
+                "cache.interstitials": true
+            }
+        },
+        {
+            "name": "Appia",
+            "settings": {
+                "siteId": "4414",
+                "placementId": "1"
+            }
+        },
+        {
+            "name": "AppLovin",
+            "settings": {
+                "comment": "No info need to be provided for AppLovin in this file. Please put the SDK key into the Android Manifest"
+            }
+        },
+        {
+            "name": "InMobi",
+            "settings": {
+                "propertyId": "11e5acdcb0014620ac2e3890c9dc41a9"
+            }
+        },
+        {
+            "name": "Millenial",
+            "settings": {
+                "app.id": "152419",
+                "log.level": "2"
+            }
+        },
+        {
+            "name": "Yume",
+            "settings": {
+                "adServerUrl": "http://shadow01.yumenetworks.com/",
+                "domainId": "1535FyPGabIb",
+                "adParams": {
+                    "eStorageMode": "EXTERNAL_STORAGE",
+                    "storageSize": "10.0",
+                    "adTimeout": "20"
+                }
+            }
+        },
+        {
+            "name": "Ebuzzing",
+            "settings": {
+                "interstitial.tag": "TAG_ANDROID_SP_INTERSTITIAL",
+                "show.close.button": true,
+                "sound.enabled": true,
+                "auto.rotation.enabled": false,
+                "back.button.enabled": false,
+                "video.considered.watched.at": "0.60",
+                "target": []
+            }
+        },
+        {
+            "name": "HyprMX",
+            "settings": {
+                "userId": "sponsorpay_user_test",
+                "distributorId": "-2734612",
+                "propertyId": "1111"
+            }
+        }
+    ]
+}
