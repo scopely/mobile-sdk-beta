@@ -8,19 +8,19 @@
                "zone.ids.rewarded.video": [
                     "vze5dfece12cd9440493"
                ],
-                "zone.ids.interstitial": [
+               "zone.ids.interstitial": [
                     "vz18be9496822047ba9b"
                ]
           }
         },
         {
-            "name": "AdMob",
-            "settings": {
-                "ad.unit.id": "** YOUR AD UNIT ID **",
-                "addTestDevice": [
-                    "SH24******"
-                ]
-            }
+               "name": "AdMob",
+               "settings": {
+                     "ad.unit.id": "ca-app-pub-3661820574441013/6666945485",
+                     "addTestDevice": [
+                          "B88275173EA1D6CCC9CD72F734A0E5A7"
+                     ]
+               }
         },
         {
             "name": "Applifier",
