@@ -14,14 +14,14 @@
           }
         },
         {
-            "name": "AdMob",
-            "settings": {
-                "ad.unit.id": "** YOUR AD UNIT ID **",
-                "addTestDevice": [
-                    "SH24******"
-                ]
-            }
-        },
+	       "name": "AdMob",
+	       "settings": {
+	          "ad.unit.id": "ca-app-pub-3661820574441013/6666945485",
+	          "addTestDevice": [
+	        	"B88275173EA1D6CCC9CD72F734A0E5A7"
+	 			]
+	       }
+	},
         {
             "name": "Applifier",
             "settings": {
