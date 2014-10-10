@@ -7,7 +7,7 @@
 //
 
 #import "SPAdColonyNetwork.h"
-#import <AdColony/AdColony.h>
+#import "AdColony.h"
 
 @class SPAdColonyInterstitialAdapter;
 

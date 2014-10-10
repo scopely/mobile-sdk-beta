@@ -14,7 +14,7 @@
 #import "SPRewardedVideoNetworkAdapter.h"
 #import "SPSemanticVersion.h"
 #import "SPLogger.h"
-#import <AdColony/AdColony.h>
+#import "AdColony.h"
 
 static const NSInteger SPAdColonyVersionMajor = 2;
 static const NSInteger SPAdColonyVersionMinor = 1;
