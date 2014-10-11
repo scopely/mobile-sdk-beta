@@ -16,6 +16,8 @@
 #import "SPLogger.h"
 #import "AdColony.h"
 
+#import "WBAdService+Internal.h"
+
 static const NSInteger SPAdColonyVersionMajor = 2;
 static const NSInteger SPAdColonyVersionMinor = 1;
 static const NSInteger SPAdColonyVersionPatch = 0;
@@ -76,9 +78,9 @@ static NSString *const SPRewardedVideoAdapterClassName = @"SPAdColonyRewardedVid
 
 - (BOOL)startSDK:(NSDictionary *)data
 {
-    id appIdParam = data[SPAdColonyAppId];
-    id V4VCZoneIdParam = data[SPAdColonyV4VCZoneId];
-    id interstitialZoneIdParam = data[SPAdColonyInterstitialZoneId];
+    id appIdParam = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACAppId]; //data[SPAdColonyAppId];
+    id V4VCZoneIdParam = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdAC];//data[SPAdColonyV4VCZoneId];
+    id interstitialZoneIdParam = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];//data[SPAdColonyInterstitialZoneId];
     NSString *appId = [appIdParam isKindOfClass:[NSString class]] ? appIdParam : nil;
     NSString *V4VCZoneId = [V4VCZoneIdParam isKindOfClass:[NSString class]] ? V4VCZoneIdParam : nil;
     NSString *interstitialZoneId = [interstitialZoneIdParam isKindOfClass:[NSString class]] ? interstitialZoneIdParam : nil;

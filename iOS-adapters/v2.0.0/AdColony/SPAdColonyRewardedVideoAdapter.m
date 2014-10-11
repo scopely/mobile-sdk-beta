@@ -11,6 +11,8 @@
 #import "SPLogger.h"
 #import "SPReachability.h"
 
+#import "WBAdService+Internal.h"
+
 #define LogInvocation SPLogDebug(@"%s", __PRETTY_FUNCTION__)
 
 typedef NS_ENUM(NSInteger, SPAdColonyRewardState) {
@@ -40,12 +42,13 @@ typedef NS_ENUM(NSInteger, SPAdColonyRewardState) {
 
 - (BOOL)startAdapterWithDictionary:(NSDictionary *)data
 {
-    id zoneIdParam = data[SPAdColonyV4VCZoneId];
-    self.zoneId = [zoneIdParam isKindOfClass:[NSString class]] ? zoneIdParam : nil;
-    if (!self.zoneId.length) {
-        SPLogError(@"ZoneId for %@ V4VC missing or empty", self.networkName);
-        return NO;
-    }
+    self.zoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];
+//    id zoneIdParam = data[SPAdColonyV4VCZoneId]; 
+//    self.zoneId = [zoneIdParam isKindOfClass:[NSString class]] ? zoneIdParam : nil;
+//    if (!self.zoneId.length) {
+//        SPLogError(@"ZoneId for %@ V4VC missing or empty", self.networkName);
+//        return NO;
+//    }
     return YES;
 }
 
