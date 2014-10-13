@@ -78,22 +78,9 @@ static NSString *const SPRewardedVideoAdapterClassName = @"SPAdColonyRewardedVid
 
 - (BOOL)startSDK:(NSDictionary *)data
 {
-    id appIdParam = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACAppId]; //data[SPAdColonyAppId];
-    id V4VCZoneIdParam = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdAC];//data[SPAdColonyV4VCZoneId];
-    id interstitialZoneIdParam = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];//data[SPAdColonyInterstitialZoneId];
-    NSString *appId = [appIdParam isKindOfClass:[NSString class]] ? appIdParam : nil;
-    NSString *V4VCZoneId = [V4VCZoneIdParam isKindOfClass:[NSString class]] ? V4VCZoneIdParam : nil;
-    NSString *interstitialZoneId = [interstitialZoneIdParam isKindOfClass:[NSString class]] ? interstitialZoneIdParam : nil;
-    
-    if (!appId.length) {
-        SPLogError(@"%@ Appid missing or empty", self.name);
-        return NO;
-    }
-    
-    if (!V4VCZoneId.length && !interstitialZoneId.length) {
-        SPLogError(@"ZoneId for %@ V4VC/interstitial missing or empty", self.name);
-        return NO;
-    }
+    NSString *appId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACAppId];
+    NSString *V4VCZoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];
+    NSString *interstitialZoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdAC];
     
     NSMutableArray *zoneIDs = [NSMutableArray array];
     if (V4VCZoneId) {
