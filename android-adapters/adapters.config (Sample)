@@ -3,29 +3,29 @@
         {
           "name": "AdColony",
           "settings": {
-               "app.id": "appbcef5600219543bc8a",
+               "app.id": "appbcef5611019543bc8a",
                "client.options": "version:6.1.1,store:google,skippable",
                "zone.ids.rewarded.video": [
-                    "vze5dfece12cd9440493"
+                    "vze5dfece78cd9440493"
                ],
                "zone.ids.interstitial": [
-                    "vz18be9496822047ba9b"
+                    "vz18be9423422047ba9b"
                ]
           }
         },
         {
                "name": "AdMob",
                "settings": {
-                     "ad.unit.id": "ca-app-pub-3661820574441013/6666945485",
+                     "ad.unit.id": "ca-app-pub-3669610574441013/6644945485",
                      "addTestDevice": [
-                          "B88275173EA1D6CCC9CD72F734A0E5A7"
+                          "B88275173EA1D6BBC9CD72F734A0E5A7"
                      ]
                }
         },
         {
             "name": "Applifier",
             "settings": {
-                "game.id.key": "11776",
+                "game.id.key": "11666",
                 "noOfferScreen": false,
                 "comment":"Optional setting below",
                 "openAnimated": false,
@@ -36,7 +36,7 @@
         {
             "name": "FlurryAppCircleClips",
             "settings": {
-                "api.key": "VG7KQ2N6W4P6GDP4CDT9",
+                "api.key": "VG7KQ2N6Z2Q7GDP4CDT9",
                 "ad.name.space": "INTERSTITIAL_MAIN_VIEW",
                 "ad.name.type": "FULLSCREEN",
                 "interstitial.ad.name.space": "INTERSTITIAL_MAIN_VIEW__NOT_REWARDED",
@@ -47,7 +47,7 @@
         {
             "name": "Vungle",
             "settings": {
-                "app.id": "527bcca267a0597358000011",
+                "app.id": "527bcca345a0597358000011",
                 "comment":"optional configurations starting below",
                 "sound.enabled": true,
                 "auto.rotation.enabled": false,
@@ -60,14 +60,14 @@
             "name": "AppLift",
             "settings": {
                 "app.id": "1911",
-                "app.secret": "8b8b27bf881bcd679cd687b64a64f812dcb764036852912edfdfd9b0bd18a375",
+                "app.secret": "8b8b27bf881bcd679cd982b64a64f812dcb764036852912edfdfd9b0bd20a375",
                 "cache.interstitials": true
             }
         },
         {
             "name": "Appia",
             "settings": {
-                "siteId": "4414",
+                "siteId": "2214",
                 "placementId": "1"
             }
         },
@@ -80,13 +80,13 @@
         {
             "name": "InMobi",
             "settings": {
-                "propertyId": "11e5acdcb0014620ac2e3890c9dc41a9"
+                "propertyId": "11e5acdcb9914620ac2e1590c9dc41a9"
             }
         },
         {
             "name": "Millenial",
             "settings": {
-                "app.id": "152419",
+                "app.id": "133419",
                 "log.level": "2"
             }
         },
@@ -94,7 +94,7 @@
             "name": "Yume",
             "settings": {
                 "adServerUrl": "http://shadow01.yumenetworks.com/",
-                "domainId": "1535FyPGabIb",
+                "domainId": "1535FyFBabIb",
                 "adParams": {
                     "eStorageMode": "EXTERNAL_STORAGE",
                     "storageSize": "10.0",
@@ -105,7 +105,7 @@
         {
             "name": "Ebuzzing",
             "settings": {
-                "interstitial.tag": "TAG_ANDROID_SP_INTERSTITIAL",
+                "interstitial.tag": "TAG_ANDROID_SP_INT",
                 "show.close.button": true,
                 "sound.enabled": true,
                 "auto.rotation.enabled": false,
@@ -118,7 +118,7 @@
             "name": "HyprMX",
             "settings": {
                 "userId": "sponsorpay_user_test",
-                "distributorId": "-2734612",
+                "distributorId": "2747612",
                 "propertyId": "1111"
             }
         }
