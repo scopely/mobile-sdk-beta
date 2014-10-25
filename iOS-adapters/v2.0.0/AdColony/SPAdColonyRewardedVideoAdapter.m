@@ -12,6 +12,7 @@
 #import "SPReachability.h"
 
 #import "WBAdService+Internal.h"
+#import "WBIncentivizedVideoProvider.h"
 
 #define LogInvocation SPLogDebug(@"%s", __PRETTY_FUNCTION__)
 
@@ -35,6 +36,22 @@ typedef NS_ENUM(NSInteger, SPAdColonyRewardState) {
 
 @synthesize delegate = _delegate;
 
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incentivizedVideoAvailable:) name:WBIncentivizedVideoProviderAvailabilityChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currencyAwarded:) name:WBIncentivizedVideoProviderCurrencyAwardedNotification object:nil];
+    }
+    return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (NSString *)networkName
 {
     return self.network.name;
@@ -43,6 +60,10 @@ typedef NS_ENUM(NSInteger, SPAdColonyRewardState) {
 - (BOOL)startAdapterWithDictionary:(NSDictionary *)data
 {
     self.zoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];
+    
+    
+    self.videoAvailable = [WBIncentivizedVideoProvider sharedProvider].incentivizedVideoAvailable;
+    
 //    id zoneIdParam = data[SPAdColonyV4VCZoneId]; 
 //    self.zoneId = [zoneIdParam isKindOfClass:[NSString class]] ? zoneIdParam : nil;
 //    if (!self.zoneId.length) {
@@ -65,31 +86,51 @@ typedef NS_ENUM(NSInteger, SPAdColonyRewardState) {
     [AdColony playVideoAdForZone:self.zoneId withDelegate:self];
 }
 
+-(void)incentivizedVideoAvailable:(NSNotification *)notification
+{
+    NSString *zoneId = notification.object;
+    if([self.zoneId isEqualToString:zoneId])
+    {
+        self.videoAvailable = [notification.userInfo[WBIncentivizedVideoProviderAvailabilityChangedNotificationAvailableKey] boolValue];
+    }
+}
+
+-(void)currencyAwarded:(NSNotification *)notification
+{
+    NSString *zoneId = notification.object;
+    if([self.zoneId isEqualToString:zoneId])
+    {
+        BOOL success = [notification.userInfo[WBIncentivizedVideoProviderCurrencyAwardedNotificationSuccessKey] boolValue];
+        self.userRewarded = success ? SPAdColonyRewardSuccessful : SPAdColonyRewardFailed;
+        [self notifyWebView];
+    }
+}
+
 #pragma mark - AdColonyDelegate Methods
-- (void)onAdColonyAdAvailabilityChange:(BOOL)available inZone:(NSString *)zoneID
-{
-    LogInvocation;
+//- (void)onAdColonyAdAvailabilityChange:(BOOL)available inZone:(NSString *)zoneID
+//{
+//    LogInvocation;
+//
+//    if (![zoneID isEqualToString:self.zoneId]) {
+//        SPLogWarn(@"zoneId received is different than the one requested by the ad");
+//        return;
+//    }
+//
+//    self.videoAvailable = available;
+//}
 
-    if (![zoneID isEqualToString:self.zoneId]) {
-        SPLogWarn(@"zoneId received is different than the one requested by the ad");
-        return;
-    }
-
-    self.videoAvailable = available;
-}
-
-- (void)onAdColonyV4VCReward:(BOOL)success currencyName:(NSString *)currencyName currencyAmount:(int)amount inZone:(NSString *)zoneID
-{
-    SPLogDebug(@"%s Rewarded: %@", __PRETTY_FUNCTION__, success ? @"YES" : @"NO");
-
-    if (![zoneID isEqualToString:self.zoneId]) {
-        SPLogWarn(@"zoneId received is different than the one requested by the ad");
-        return;
-    }
-
-    self.userRewarded = success ? SPAdColonyRewardSuccessful : SPAdColonyRewardFailed;
-    [self notifyWebView];
-}
+//- (void)onAdColonyV4VCReward:(BOOL)success currencyName:(NSString *)currencyName currencyAmount:(int)amount inZone:(NSString *)zoneID
+//{
+//    SPLogDebug(@"%s Rewarded: %@", __PRETTY_FUNCTION__, success ? @"YES" : @"NO");
+//
+//    if (![zoneID isEqualToString:self.zoneId]) {
+//        SPLogWarn(@"zoneId received is different than the one requested by the ad");
+//        return;
+//    }
+//
+//    self.userRewarded = success ? SPAdColonyRewardSuccessful : SPAdColonyRewardFailed;
+//    [self notifyWebView];
+//}
 
 #pragma mark - AdColonyAdDelegate methods
 - (void)onAdColonyAdStartedInZone:(NSString *)zoneID

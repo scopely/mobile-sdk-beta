@@ -78,19 +78,19 @@ static NSString *const SPRewardedVideoAdapterClassName = @"SPAdColonyRewardedVid
 
 - (BOOL)startSDK:(NSDictionary *)data
 {
-    NSString *appId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACAppId];
-    NSString *V4VCZoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];
-    NSString *interstitialZoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdAC];
-    
-    NSMutableArray *zoneIDs = [NSMutableArray array];
-    if (V4VCZoneId) {
-        [zoneIDs addObject:V4VCZoneId];
-    }
-    if (interstitialZoneId) {
-        [zoneIDs addObject:interstitialZoneId];
-    }
-    
-    [AdColony configureWithAppID:appId zoneIDs:zoneIDs delegate:self.rewardedVideoNetworkAdapter logging:YES];
+//    NSString *appId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACAppId];
+//    NSString *V4VCZoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdACIncentivizedZone];
+//    NSString *interstitialZoneId = [[WBAdService sharedAdService] fullpageIdForAdId:WBAdIdAC];
+//    
+//    NSMutableArray *zoneIDs = [NSMutableArray array];
+//    if (V4VCZoneId) {
+//        [zoneIDs addObject:V4VCZoneId];
+//    }
+//    if (interstitialZoneId) {
+//        [zoneIDs addObject:interstitialZoneId];
+//    }
+//    
+//    [AdColony configureWithAppID:appId zoneIDs:zoneIDs delegate:self.rewardedVideoNetworkAdapter logging:YES];
     return YES;
 }
 
